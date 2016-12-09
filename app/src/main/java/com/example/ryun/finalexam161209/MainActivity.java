@@ -109,6 +109,10 @@ public class MainActivity extends AppCompatActivity {
                     adult.setText("");
                     child.setText("");
                     kid.setText("");
+                    total.setText("총 명수 : ");
+                    saleprice.setText("할인 금액 : ");
+                    totalprice.setText("결제 금액 : ");
+                    flag=0;
                 }
             }
         });
