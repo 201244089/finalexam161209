@@ -187,5 +187,33 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(flag==0) {
+                    Toast.makeText(getApplicationContext(),"인원예약을 먼저 하세요",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(year==-1||min==-1) {
+                    Toast.makeText(getApplicationContext(),"날짜와 시간을 입력하세요!",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                Toast.makeText(getApplicationContext(),year+"-"+mon+"-"+day+" "+hour+":"+min+" 예약완료되었습니다.",Toast.LENGTH_SHORT).show();
+                cronoM.stop();
+                cronoM.setTextColor(Color.GRAY);
+            }
+        });
+
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                linLay1.setVisibility(View.VISIBLE);
+                linLay2.setVisibility(View.INVISIBLE);
+            }
+        });
+
+
+
     }
+
 }
