@@ -12,6 +12,221 @@
     android:orientation="vertical"
     tools:context="com.example.ryun.finalexam161209.MainActivity">
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Switch
+            android:text="얘약시작"
+            android:layout_width="136dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/switch1" />
+
+        <Chronometer
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:format="%s"
+            android:id="@+id/chronometer" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:id="@+id/frameLayout"
+        android:visibility="invisible"
+        android:background="@color/colorAccent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/switchlayout"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/framelayout2"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:padding="10sp"
+                android:background="@color/colorAccent">
+
+                <TextView
+                    android:text="인원예약"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView"
+                    android:textAlignment="center"/>
+
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView2"
+                    android:textSize="18sp"
+                    android:layout_weight="1"
+                    android:text="어른(15000원)" />
+
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberSigned"
+                    android:ems="10"
+                    android:id="@+id/editText1"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:text="청소년(12000원)"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView3"
+                    android:textSize="18sp"
+                    android:layout_weight="1" />
+
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberSigned"
+                    android:ems="10"
+                    android:id="@+id/editText2"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:text="어린이(8000원)"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView4"
+                    android:textSize="18sp"
+                    android:layout_weight="1" />
+
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberSigned"
+                    android:ems="10"
+                    android:id="@+id/editText3"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rgroup">
+
+                    <RadioButton
+                        android:text="기본할인(5% 할인)"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:id="@+id/radioButton"
+                        android:layout_weight="1" />
+
+                    <RadioButton
+                        android:text="현금할인(10% 할인)"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/radioButton2"
+                        android:layout_weight="1" />
+
+                    <RadioButton
+                        android:text="MemberShip있음(20% 할인)"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/radioButton3"
+                        android:layout_weight="1" />
+                </RadioGroup>
+
+                <ImageView
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/everland"
+                    android:id="@+id/imageView"
+                    android:layout_weight="1"
+                    android:layout_width="120dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:text="예약완료"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:text="시간예약 GO"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button2"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <TextView
+                android:text="총 명수 : "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView5"
+                android:layout_weight="1"
+                android:textSize="24sp" />
+
+            <TextView
+                android:text="할인금액 : "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView6"
+                android:layout_weight="1"
+                android:textSize="24sp" />
+
+            <TextView
+                android:text="결제금액 : "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView7"
+                android:layout_weight="1"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+
+
+
+    </FrameLayout>
 
 
 </LinearLayout>
