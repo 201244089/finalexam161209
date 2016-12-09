@@ -35,7 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:id="@+id/frameLayout"
+        android:id="@+id/frameLayout1"
         android:visibility="invisible"
         android:background="@color/colorAccent">
 
@@ -50,7 +50,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="16dp"
-                android:id="@+id/framelayout2"
+                android:id="@+id/framelayout3"
                 android:layout_marginRight="16dp"
                 android:layout_marginTop="16dp"
                 android:padding="10sp"
@@ -282,7 +282,8 @@
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_weight="1"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:id="@+id/framelayout2">
 
                 <CalendarView
                     android:layout_width="wrap_content"
