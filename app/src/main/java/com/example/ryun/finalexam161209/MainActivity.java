@@ -18,6 +18,7 @@ import android.widget.RadioGroup;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -100,6 +101,11 @@ public class MainActivity extends AppCompatActivity {
                     cronoM.stop();
                     cronoM.setTextColor(Color.parseColor("gray"));
                     cronoM.setVisibility(View.VISIBLE);
+                    frLay1.setVisibility(View.INVISIBLE);
+                    frLay2.setVisibility(View.INVISIBLE);
+                    linLay1.setVisibility(View.INVISIBLE);
+                    textbg.setVisibility(View.INVISIBLE);
+                    linLay2.setVisibility(View.INVISIBLE);
                     adult.setText("");
                     child.setText("");
                     kid.setText("");
@@ -130,6 +136,36 @@ public class MainActivity extends AppCompatActivity {
                 if(isChecked) {
                     img.setImageResource(R.drawable.card);
                 }
+            }
+        });
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!adult.getText().toString().matches("^[0-9]+$")||!child.getText().toString().matches("^[0-9]+$")||!kid.getText().toString().matches("^[0-9]+$")) {
+                    Toast.makeText(getApplicationContext(),"인원을 입력하세요",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                double harin=0.05;
+                if(rbtn2.isChecked()) harin=0.1;
+                else if (rbtn3.isChecked()) harin=0.2;
+
+                int text1 = Integer.parseInt(adult.getText().toString());
+                int text2 = Integer.parseInt(child.getText().toString());
+                int text3 = Integer.parseInt(kid.getText().toString());
+                total.setText("총 명수 : "+((text1+text2+text3)));
+                saleprice.setText("할인 금액 : "+((int) Math.round((text1*15000+text2*12000+text3*8000)*harin/10)*10));
+                totalprice.setText("결제 금액 : "+((text1*15000+text2*12000+text3*8000)-((int) Math.round((text1*15000+text2*12000+text3*8000)*harin/10)*10)));
+                flag=1;
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                textbg.setBackgroundColor(Color.parseColor("#E0FFFF"));
+                linLay1.setVisibility(View.INVISIBLE);
+                linLay2.setVisibility(View.VISIBLE);
             }
         });
 
