@@ -25,6 +25,11 @@ public class MainActivity extends AppCompatActivity {
     Button btn2;
     Button btn3;
     Button btn4;
+    RadioButton rbtn1;
+    RadioButton rbtn2;
+    RadioButton rbtn3;
+    RadioButton rbtn4;
+    RadioButton rbtn5;
     Switch start_Swi;
     Chronometer cronoM;
     CalendarView calV;
@@ -34,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     RadioButton rb1, rb4;
     ImageView img;
     TextView total, saleprice, totalprice;
-    FrameLayout frLay1, frLay2;
+    FrameLayout frLay1, frLay2, textbg;
     LinearLayout linLay1, linLay2;
     int year=-1;
     int mon=-1;
@@ -53,6 +58,11 @@ public class MainActivity extends AppCompatActivity {
         btn2 = (Button)findViewById(R.id.button2);
         btn3 = (Button)findViewById(R.id.button3);
         btn4 = (Button)findViewById(R.id.button4);
+        rbtn1 = (RadioButton)findViewById(R.id.radioButton);
+        rbtn2 = (RadioButton)findViewById(R.id.radioButton2);
+        rbtn3 = (RadioButton)findViewById(R.id.radioButton3);
+        rbtn4 = (RadioButton)findViewById(R.id.radioButton4);
+        rbtn5 = (RadioButton)findViewById(R.id.radioButton5);
         start_Swi = (Switch)findViewById(R.id.switch1);
         cronoM = (Chronometer)findViewById(R.id.chronometer);
         calV = (CalendarView)findViewById(R.id.calendarView);
@@ -65,13 +75,12 @@ public class MainActivity extends AppCompatActivity {
         total = (TextView) findViewById(R.id.textView5);
         saleprice = (TextView) findViewById(R.id.textView6);
         totalprice = (TextView) findViewById(R.id.textView7);
+        textbg = (FrameLayout)findViewById(R.id.framelayout);
         frLay1 = (FrameLayout) findViewById(R.id.frameLayout1);
         frLay2 = (FrameLayout)findViewById(R.id.framelayout2);
         img = (ImageView)findViewById(R.id.imageView);
         linLay1 = (LinearLayout)findViewById(R.id.switchlayout);
         linLay2 = (LinearLayout)findViewById(R.id.timelayout);
-        rb1 =(RadioButton)findViewById(R.id.radioButton);
-        rb4 =(RadioButton)findViewById(R.id.radioButton4);
 
         start_Swi.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
             @Override
@@ -81,6 +90,10 @@ public class MainActivity extends AppCompatActivity {
                     cronoM.start();
                     cronoM.setTextColor(Color.parseColor("#0000FF"));
                     cronoM.setVisibility(View.VISIBLE);
+                    frLay1.setVisibility(View.VISIBLE);
+                    linLay1.setVisibility(View.VISIBLE);
+                    textbg.setVisibility(View.VISIBLE);
+                    linLay2.setVisibility(View.INVISIBLE);
                 }
                 else {
                     cronoM.setBase(SystemClock.elapsedRealtime());
@@ -95,6 +108,30 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        rbtn1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked) {
+                    img.setImageResource(R.drawable.everland);
+                }
+            }
+        });
+        rbtn2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked) {
+                    img.setImageResource(R.drawable.money);
+                }
+            }
+        });
+        rbtn3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked) {
+                    img.setImageResource(R.drawable.card);
+                }
+            }
+        });
 
     }
 }
