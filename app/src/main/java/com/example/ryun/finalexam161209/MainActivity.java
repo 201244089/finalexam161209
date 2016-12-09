@@ -169,5 +169,23 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        calV.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(CalendarView calendarView, int i, int i1, int i2) {
+                year = i;
+                mon = i1;
+                day = i2;
+            }
+        });
+
+        timeP.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
+            @Override
+            public void onTimeChanged(TimePicker timePicker, int i, int i1) {
+                hour = i;
+                min = i1;
+            }
+        });
+
     }
 }
