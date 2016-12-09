@@ -1,10 +1,14 @@
 package com.example.ryun.finalexam161209;
 
+import android.graphics.Color;
+import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.Chronometer;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -43,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setTitle("놀이동산 예약시스템");
 
         btn1 = (Button)findViewById(R.id.button);
         btn2 = (Button)findViewById(R.id.button2);
@@ -67,5 +72,29 @@ public class MainActivity extends AppCompatActivity {
         linLay2 = (LinearLayout)findViewById(R.id.timelayout);
         rb1 =(RadioButton)findViewById(R.id.radioButton);
         rb4 =(RadioButton)findViewById(R.id.radioButton4);
+
+        start_Swi.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean on) {
+                if(on) {
+                    cronoM.setBase(SystemClock.elapsedRealtime());
+                    cronoM.start();
+                    cronoM.setTextColor(Color.parseColor("#0000FF"));
+                    cronoM.setVisibility(View.VISIBLE);
+                }
+                else {
+                    cronoM.setBase(SystemClock.elapsedRealtime());
+                    cronoM.stop();
+                    cronoM.setTextColor(Color.parseColor("gray"));
+                    cronoM.setVisibility(View.VISIBLE);
+                    adult.setText("");
+                    child.setText("");
+                    kid.setText("");
+                }
+            }
+        });
+
+
+
     }
 }
