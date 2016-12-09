@@ -213,6 +213,19 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        rbtn4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked) {
+                    calV.setVisibility(View.VISIBLE);
+                    timeP.setVisibility(View.INVISIBLE);
+                }
+                else {
+                    calV.setVisibility(View.INVISIBLE);
+                    timeP.setVisibility(View.VISIBLE);
+                }
+            }
+        });
 
     }
 
